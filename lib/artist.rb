@@ -1,5 +1,5 @@
 class Artist
-  attr_accessor :name
+  attr_accessor :name, :songs
   @@all = []
 
   def self.all
@@ -9,10 +9,11 @@ class Artist
   def initialize(name)
     @name = name
     @@all.push(self)
+    @songs = []
   end
 
   def new_song(name, genre)
-    Song.new(name, self, genre)
+    @songs.push(Song.new(name, self, genre))
   end
 
 end
