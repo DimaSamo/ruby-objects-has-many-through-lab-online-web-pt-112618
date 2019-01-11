@@ -17,4 +17,10 @@ class Genre
     end
   end
 
+  def artists
+    Song.all.map do |song|
+      song.artist if song.gebre == self
+    end.compact
+  end
+
 end
