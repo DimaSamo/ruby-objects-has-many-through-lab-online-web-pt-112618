@@ -21,4 +21,10 @@ class Artist
     end
   end
 
+  def genres
+    Song.all.map do |song|
+      song.genre if song.artist == self
+    end.compact
+  end
+
 end
